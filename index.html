@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ensures proper scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>from yugo- Happy Valentine's Day</title>
+  <style>
+    /* --- RESET & BODY STYLES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #000;  /* Black background for dramatic contrast */
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #ff4e50; /* Vibrant Valentine's red/pink */
+      margin-bottom: 40px;
+    }
+    
+    /* --- MAIN CONTAINER --- */
+    .container {
+      position: relative;
+      width: 500px;  /* Container width */
+      height: 600px; /* Container height to hold stem & flower */
+      margin: 0 auto;
+    }
+    
+    /* --- STEM --- */
+    .stem {
+      position: absolute;
+      bottom: 0;           /* Stem attached to bottom */
+      left: 50%;           /* Centered horizontally */
+      transform: translateX(-50%);
+      width: 12px;
+      height: 400px;       /* Stem length */
+      background: linear-gradient(to bottom, #6b8e23, #556b2f);
+      border-radius: 6px;
+    }
+    
+    /* --- FLOWER --- */
+    .flower {
+      position: absolute;
+      /* 
+         Position the flower so that its center (at 100px from the bottom
+         of a 200px tall flower container) aligns with the top of the stem.
+         (Stem top is at 400px from the bottom, so set flower's bottom to 300px.)
+      */
+      bottom: 300px; 
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+    }
+    
+    /* --- PETALS --- */
+    .petal {
+      position: absolute;
+      width: 50px;
+      height: 100px;
+      top: 50%; 
+      left: 50%;
+      transform-origin: 50% 100%;
+      /* Initially position petal so that its bottom center is at the flower's center */
+      transform: translate(-50%, -100%) rotate(0deg);
+      background: radial-gradient(circle at 50% 30%, #ff3030 0%, #8b0000 80%);
+      border-radius: 25px 25px 10px 10px;
+    }
+    /* Rotate each petal by 60° increments for a 6-petal bloom */
+    .petal:nth-child(1) { transform: translate(-50%, -100%) rotate(0deg); }
+    .petal:nth-child(2) { transform: translate(-50%, -100%) rotate(60deg); }
+    .petal:nth-child(3) { transform: translate(-50%, -100%) rotate(120deg); }
+    .petal:nth-child(4) { transform: translate(-50%, -100%) rotate(180deg); }
+    .petal:nth-child(5) { transform: translate(-50%, -100%) rotate(240deg); }
+    .petal:nth-child(6) { transform: translate(-50%, -100%) rotate(300deg); }
+    
+    /* --- CENTER --- */
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      background: #ffdb58; /* Golden color */
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Valentine's Day</h1>
+  <div class="container">
+    <!-- Stem -->
+    <div class="stem"></div>
+    <!-- Single flower at the top of the stem -->
+    <div class="flower">
+      <!-- 6 Petals -->
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <!-- Center -->
+      <div class="center"></div>
+    </div>
+  </div>
+</body>
+</html>
